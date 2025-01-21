@@ -22,6 +22,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server is running `);
+  console.log(`Server is running  ${PORT}`);
 });
 export default app;
