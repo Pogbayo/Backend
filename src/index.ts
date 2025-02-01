@@ -16,15 +16,18 @@ const allowedOrigins = ['https://d-market-3z4m.vercel.app', 'http://localhost:51
 
 app.use(cors({
   origin: (origin, callback) => {
+    console.log("Origin:", origin); // Log the origin of the request
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.error("CORS error: Not allowed by CORS", origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
 
 mongoose
   .connect(process.env.MONGO_URL as string)

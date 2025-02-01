@@ -53,9 +53,11 @@ router.post("/register", async (req: Request, res: Response) => {
 
 //Login route
 router.post("/login", async (req: Request, res: Response) => {
+  console.log(req.body)
+  console.log("Login route hit"); // Check if the route is hit
+
   try {
     const { email, password } = req.body;
-
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ error: "Inavlid email or password" });
