@@ -54,7 +54,7 @@ router.post("/register", async (req: Request, res: Response) => {
 //Login route
 router.post("/login", async (req: Request, res: Response) => {
   console.log(req.body)
-  console.log("Login route hit"); // Check if the route is hit
+  console.log("Login route hit"); 
 
   try {
     const { email, password } = req.body;
