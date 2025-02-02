@@ -33,7 +33,9 @@ mongoose
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
-
+app.get("ping",(req,res)=>{
+  res.send("pong")
+})
 app.listen(PORT, () => {
   console.log(`Server is running  ${PORT}`);
 });
